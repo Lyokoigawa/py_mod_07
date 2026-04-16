@@ -36,7 +36,8 @@ def battle(participants: list[Opponent]) -> None:
                 print(creature2[0].describe())
                 print("  now fight!")
                 creature1[1].act(creature1[0])
-                creature2[1].act(creature2[0])
+                if creature1[1].is_valid(creature1[0]):
+                    creature2[1].act(creature2[0])
                 print()
                 i2 += 1
             i1 += 1
